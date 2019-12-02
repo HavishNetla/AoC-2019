@@ -1,8 +1,6 @@
-function calc(mass) {
-    return Math.floor(mass / 3) - 2
-}
+const calc = mass => Math.floor(mass / 3) - 2
 
-let inputData = `125517
+const inputData = `125517
 140694
 65516
 98562
@@ -105,16 +103,17 @@ let inputData = `125517
 
 let sum = 0
 
-inputData.split("\n").forEach(i => {
-    let calcOutput = i
-    let calcSum = 0
-    while(calcOutput > 0) {
-        calcOutput = calc(calcOutput)
-    
-        if(calcOutput > 0) {
-            calcSum += calcOutput
-        }
+inputData.split('\n').forEach(i => {
+  let calcOutput = i
+  let calcSum = 0
+  while (calcOutput > 0) {
+    calcOutput = calc(calcOutput)
+
+    if (calcOutput > 0) {
+      calcSum += calcOutput
     }
-    sum += calcSum
+  }
+
+  sum += calcSum
 })
 console.log(sum)
