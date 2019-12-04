@@ -74,9 +74,9 @@ for (let i = 0; i < input2.length; i += 1) {
 //   }
 // }
 function isItemInArray(array, item) {
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i += 1) {
     // This if statement depends on the format of your array
-    if (array[i][0] == item[0] && array[i][1] == item[1]) {
+    if (array[i][0] == item[0] && array[i][1] === item[1]) {
       return true // Found it
     }
   }
