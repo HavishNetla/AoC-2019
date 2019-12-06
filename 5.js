@@ -4,7 +4,7 @@ const inputData = '3,225,1,225,6,6,1100,1,238,225,104,0,1101,40,27,224,101,-67,2
 
 let loc = 0
 
-const input = 1
+const input = 5
 for (let i = 0; i < inputData.length; i += 1) {
   inputData[i] = parseInt(inputData[i], 10)
 }
@@ -17,6 +17,7 @@ for (let k = 0; k < inputData.length; k += 1) {
 
   const num1 = val1 === 0 ? inputData[inputData[loc + 1]] : inputData[loc + 1]
   const num2 = val2 === 0 ? inputData[inputData[loc + 2]] : inputData[loc + 2]
+  const num3 = inputData[loc + 3]
 
   if (val === 1) {
     inputData[inputData[loc + 3]] = num1 + num2
@@ -31,6 +32,34 @@ for (let k = 0; k < inputData.length; k += 1) {
   } else if (val === 4) {
     console.log(`${inputData[inputData[loc + 1]]}`)
     loc += 2
+  } else if (val === 5) {
+    if (num1 !== 0) {
+      loc = num2
+    } else {
+      loc += 3
+    }
+  } else if (val === 6) {
+    if (num1 === 0) {
+      loc = num2
+    } else {
+      loc += 3
+    }
+  } else if (val === 7) {
+    if (num1 < num2) {
+      inputData[num3] = 1
+    } else {
+      inputData[num3] = 0
+    }
+
+    loc += 4
+  } else if (val === 8) {
+    if (num1 === num2) {
+      inputData[num3] = 1
+    } else {
+      inputData[num3] = 0
+    }
+
+    loc += 4
   } else if (val === 99) {
     break
   }
